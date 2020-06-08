@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+:root{
+	--primary-color : #003875;
+	--body-color : #f4f4f4;
+	--myBorderColor: rgba(215, 222, 217,1);
+	--shadow: 0 1px 5px rgba(104,104,104, 0.8);
+	--boxColor: rgba(230, 234, 240,1);
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #f4f4f4;
+	font-family: "Arial", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	color: white;
+}
+ul, li, a {
+	list-style: none;
+	text-decoration: none;
+}
+i{
+	color: white;
+}
+.nav-container{
+	position: relative;
+	height: 23.3vh;
+	background-color: #003875;
+
+}
+img{
+	cursor: pointer;
+}
+
+/*Top Navigation Bar*/
+header{
+	position: relative;
+	top: 42px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 100px;
+}
+header h1{
+	margin-right: auto;
+}
+.nav-links li{
+	display: inline-block;
+}
+.nav-links li a{
+	padding: 0 5px;
+}
+.nav-links li a i{
+	transition: all 1s ease 0;
+}
+.nav-links li a i:hover{
+	transition: all 1s ease ;
+	opacity: 0.5;
+}
+
+ul ul.drop-down{
+	display: inline-block;
+}
+/*Marquee Nav*/
+
+.marquee-nav{
+	position: relative;
+	height: 35px;
+	background-color: grey;
+	overflow-x: hidden;
+}
+.marquee-nav h1{
+	position: relative;
+	font-size: 16px;
+	top: 8px;
+	left: 50px;
+}
+h1 a {
+	color: black;
+}
+.break-line{
+	height:5px;
+	background-color: #c33;
+}
+
+/*Main Navigation Links*/
+
+.main-nav{
+	width: 100%;
+	background-color: var(--body-color);
+	z-index: 3;
+}
+
+
+
+.main-nav-links{
+	display: grid;
+	position: relative;
+	width: 60%;
+	height: 50px;
+	grid-gap: 5px;
+	grid-template-columns: repeat(5,1fr);
+	padding: 3px 0px;
+	text-align: center;
+	left: 260px;
+	z-index: 1;
+}	
+/************************ All LINKS Heading STYLE **********************/
+
+.links.link1 a.main-links, .links.link2 a.main-links, .links.link3 a.main-links,
+ .links.link4 a.main-links, .links-last.link5 a.main-links{
+	display: block;
+	border : none;
+	padding: 5px 10px; 
+	font-weight: 600;
+	color: black;
+	/*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+
+}
+/************************All LINKS Heading Transition *******************/
+
+li.links a.main-links:hover, li.links-last a.main-links:hover{
+	background-color: rgba(0,0,0,0.2);
+	transition: 1s ease-out;
+}
+/****************************LINK1,2,3,4 Display NONE ******************/
+.main-nav-links .links ul{
+	display: none;
+}
+
+
+
+/**********************LINK1 START **************************/
+/* LINK1 Displaying With Animation*/
+.links.link1:hover .link1-dropdown{
+	display: grid;
+	position: absolute;
+	grid-template-columns: repeat(3,199px 2px 199px);
+	height: 300px;
+	width: 400px;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+/* LINK1 & LINK2 & LINK3 & LINK4 GIVING BORDER */
+.link1-dropdown, .link2-dropdown, .link3-dropdown, .link4-dropdown, .link5-container{
+	margin-top: 0px;
+	height: 0px;
+	overflow: hidden;
+	border-top: 5px solid #c33;
+	background-color: rgba(230, 234, 240,1);
+	
+}
+/**************  HEADING OF ALL LINKS	**********************/
+.link1-dropdown-content, .link2-dropdown-content, .link3-dropdown-content, .link4-dropdown-content{
+	padding: 30px 20px;
+	color: black;
+	text-align: start;
+}
+
+/**********************  LINE *****************************/
+.link1-dropdown-content.line{
+	border-left: 1px solid rgba(215, 222, 217,1);
+	height: 300px;
+}
+/********************* P TAG OF ALL LINKS ******************************/
+.link1-dropdown p, .link2-dropdown p, .link3-dropdown p, .link4-dropdown p{
+	font-size: 12px;
+	margin-top: 30px;
+	color: black;
+}
+/********************************* LINK1 & LINK2 BUTTONS ************************************/
+.oversees-btn, .justice-btn, .believers-btn{
+	padding: 5px 20px;
+	background-color: #003875;
+	border: 1px solid #003875;
+	border-radius: 4px;
+	margin-top: 50px;
+	font-size: 14px;
+	color: white;
+}
+/************************* 	LINK1 & LINK2 BUTTON ANCHOR TAG COLOR*************************/
+.oversees-btn a, .justice-btn a, .believers-btn a, .government-btn a{
+	color: white;
+}
+/*********LINK1 IMAGE ADJUST ***************/
+.link1-dropdown-content.justice img{
+	width: 100%;
+	height: 50%;
+	margin-top: 30px;
+}
+/*************************** LINK1,LINK2, LINK3 & LINK4 HEADING TRANSITION **************************/
+.link1-dropdown-content.oversees:hover,.link1-dropdown-content.justice:hover,
+ .link2-dropdown-content.leaders:hover, .link2-dropdown-content.believers:hover,
+ .link2-dropdown-content.government:hover, .link3-dropdown-content.awareness:hover,
+ .link3-dropdown-content.participation:hover, .link3-dropdown-content.worship:hover,
+ .link4-dropdown-content.communication:hover, .link4-dropdown-content.send:hover{
+	transition: all 1s ease-out;
+	background-color: rgba(120, 122, 120,0.5);
+}
+
+/*******************************LINK1 CLOSED **********************************/
+
+
+/*******************************LINK2 STARTED *********************************/
+
+.links.link2:hover .link2-dropdown{
+	display: grid;
+	position: absolute;
+	grid-template-columns: repeat(5,199px 1px 199px 1px 199px);
+	height: 400px;
+	width: 600px;
+	margin-left: -100px;
+	color: black;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+/************************************ LINE ******************************/
+.link2-dropdown-content.line2{ 
+	border-left: 1px solid rgba(215, 222, 217,1);
+	height: 350px;
+}
+/****************LINK2 IMAGE ADJUST **********************/
+.link2-dropdown-content.government img{
+	width: 100%;
+	height:50%;
+}
+.link2-dropdown-content p a{
+	color: #003875;
+	
+}
+/*****************LINK2 BUTTON ************************/
+ .government-btn{
+ 	padding: 5px 20px;
+	background-color: #003875;
+	border: 1px solid #003875;
+	border-radius: 4px;
+	margin-top: 20px;
+	font-size: 14px;
+	color: white;
+ }
+ /****************************************LINK2 CLOSED***************************************/
+
+ /****************************************LINK3 START*****************************************/
+.links.link3:hover .link3-dropdown{
+	display: grid;
+	position: absolute;
+	grid-template-columns: repeat(5,333px 1px 333px 1px 333px);
+	height: 250px;
+	width: 1001px;
+	margin-left: -400px;
+	color: black;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+/***********LINK3 LINE**********/
+.link3-dropdown-content.line3{ 
+	border-left: 1px solid rgba(215, 222, 217,1);
+	height: 350px;
+}
+/*****************LINK4 START ****************/
+.links.link4:hover .link4-dropdown{
+	display: grid;
+	position: absolute;
+	grid-template-columns: repeat(3,199px 2px 199px);
+	height: 300px;
+	width: 400px;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+/*********LINK4 LINE********************/
+.link4-dropdown-content.line{
+	border-left: 1px solid rgba(215, 222, 217,1);
+	height: 300px;
+}
+/**************LINK5 DISPLAY NONE ******************/
+
+.link5.link5-container{
+	display: none;
+}
+/******************LINK5 Display Grid************************/
+.links-last.link5:hover .link5-container{
+	display: grid;
+	position: absolute;
+	grid-template-columns: 1fr;
+	height: 300px;
+	width: 1201px;
+	margin-left: -800px;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+
+ul.link5-dropdown.link5-dropdown-leftbar{
+	width: 280px;
+	height: 400px;
+	border-right: 1px solid var(--myBorderColor);
+	padding: 15px 5px 0px 0px;
+	line-height: 2;
+}
+ul.link5-dropdown .link5-dropdown-content:hover{
+	background-color: var(--body-color);
+	transition: 1s ease-out;
+}
+li.link5-dropdown-content a{
+	font-size: 12px;
+	color: var(--primary-color);
+}
+li.link5-dropdown-content img{
+	width: 150px;
+	height: 100px;
+}
+li.link5-dropdown-content{
+	width: 280px;
+	text-align: end;
+	padding-right: 30px;
+}
+/***********LINK5 PRESS ***********/
+.link5-dropdown-content-press p, .link5-dropdown-content-alert p{
+	font-size: 12px;
+	margin-top: 10px;
+	line-height: 1.4;
+	text-align: justify;
+	color: black;
+	width: 150px;
+}
+li.link5-dropdown-content.press ul, li.link5-dropdown-content.alert ul{
+	display: none;
+}
+
+.link5-dropdown-content.press:hover .link5-dropdown-content-press{
+	display: inline-grid;
+	grid-template-columns: repeat(4,150px);
+	grid-gap: 40px;
+	justify-content: center;
+	border: 1px solid var(--myBorderColor);
+	margin-top: -20px;
+	position: absolute;
+	margin-left:30px;
+}
+.link5-dropdown-content-press-content, .link5-dropdown-content-alert-content{
+	margin-top: 20px;
+	margin-left: 100px;
+}
+/*********ALERT*********/
+.link5-dropdown-content.alert:hover .link5-dropdown-content-alert{
+	display: inline-grid;
+	grid-template-columns: repeat(4,150px);
+	grid-gap: 40px;
+	justify-content: center;
+	border: 1px solid var(--myBorderColor);
+	margin-top: -52px;
+	position: absolute;
+	margin-left:30px;
+}
+/*.links-last.link5:hover .link5-dropdown-content-press{
+	display: inline-grid;
+	grid-template-columns: repeat(4,150px);
+	grid-gap: 40px;
+	justify-content: center;
+	border: 1px solid var(--myBorderColor);
+	margin-top: -20px;
+	position: absolute;
+	margin-left:30px;
+}*/
